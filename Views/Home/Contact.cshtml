@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <style>
+        .container2 {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: black;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        textarea {
+            height: 150px;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+    </style>
+</head>
+<body>
+    <div class="banner page-head">
+        <div class="header"></div>
+        <div class="clearfix"></div>
+    </div>
+    <div class="container2">
+        <h2>Contact Us</h2>
+        <p id="errormsg" style="color:red"></p>
+        <form method="post" id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" maxlength="11" name="phone">
+
+            <label for="inquiry-type">Inquiry Type:</label>
+            <select id="inquiry-type" name="inquiry-type" required>
+                <option value="">Select an option</option>
+                <option value="General Inquiry">General Inquiry</option>
+                <option value="Customer Support">Customer Support</option>
+                <option value="Technical Support">Technical Support</option>
+                <option value="Sales">Sales</option>
+            </select>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <input type="button" class="btn btn-primary" id="contact" value="Submit">
+        </form>
+    </div>
+
+    @* form Submission on controller *@
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#contact").click(function () {
+                var name = $("#name").val();
+                var email = $("#email").val();
+                var inquiry = $("#inquiry-type option:selected").text();
+                var phone = $("#phone").val();
+                var message = $("#message").val();
+
+                if (name == "" || email == "" || message == "") {
+                    $("#errormsg").text("Please enter required fields");
+                    return false;
+                } else {
+                    $("#errormsg").text("");
+                }
+
+                var mydata = {
+                    name: name,
+                    email: email,
+                    message: message,
+                    phone: phone,
+                    inquiry: inquiry
+                };
+
+                $.ajax({
+                    url: '@Url.Action("contactus")',
+                    type: "post",
+                    data: mydata,
+                    success: function (data) {
+                        if (data == "success") {
+                            alert("Successfully sent!");
+                            $("#name").val("");
+                            $("#email").val("");
+                            $("#message").val("");
+                            $("#phone").val("");
+                        } else {
+                            alert("Failed");
+                        }
+                    },
+                    error: function () {
+                        alert("Fail");
+                    }
+                });
+            });
+        });
+        var inputField = document.querySelector('#phone');
+        inputField.onkeydown = function (event) {
+            if (isNaN(event.key) && event.key !== 'Backspace') {
+                event.preventDefault();
+            }
+        };
+    </script>
+</body>
+</html>

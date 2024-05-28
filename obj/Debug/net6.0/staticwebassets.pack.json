@@ -1,0 +1,389 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\Online_Recharge.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Online_Recharge.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\css\\animate.css",
+      "PackagePath": "staticwebassets\\css\\animate.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\1.png",
+      "PackagePath": "staticwebassets\\images\\1.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\arrow.png",
+      "PackagePath": "staticwebassets\\images\\arrow.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\banner7.jpg",
+      "PackagePath": "staticwebassets\\images\\banner7.jpg"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\bbb1.png",
+      "PackagePath": "staticwebassets\\images\\bbb1.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\bbb3.png",
+      "PackagePath": "staticwebassets\\images\\bbb3.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\bbb5.png",
+      "PackagePath": "staticwebassets\\images\\bbb5.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\bbbb.png",
+      "PackagePath": "staticwebassets\\images\\bbbb.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\card.png",
+      "PackagePath": "staticwebassets\\images\\card.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\cell.png",
+      "PackagePath": "staticwebassets\\images\\cell.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\credit.png",
+      "PackagePath": "staticwebassets\\images\\credit.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\date.png",
+      "PackagePath": "staticwebassets\\images\\date.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\dth.png",
+      "PackagePath": "staticwebassets\\images\\dth.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\landline.png",
+      "PackagePath": "staticwebassets\\images\\landline.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\logos.png",
+      "PackagePath": "staticwebassets\\images\\logos.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\map.png",
+      "PackagePath": "staticwebassets\\images\\map.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\mark1.png",
+      "PackagePath": "staticwebassets\\images\\mark1.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\menu.png",
+      "PackagePath": "staticwebassets\\images\\menu.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\mobile.png",
+      "PackagePath": "staticwebassets\\images\\mobile.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\search.png",
+      "PackagePath": "staticwebassets\\images\\search.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\security.png",
+      "PackagePath": "staticwebassets\\images\\security.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\social.png",
+      "PackagePath": "staticwebassets\\images\\social.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\tick-mark1.png",
+      "PackagePath": "staticwebassets\\images\\tick-mark1.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\usb.png",
+      "PackagePath": "staticwebassets\\images\\usb.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\images\\web.png",
+      "PackagePath": "staticwebassets\\images\\web.png"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\js\\classie.js",
+      "PackagePath": "staticwebassets\\js\\classie.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\js\\easyResponsiveTabs.js",
+      "PackagePath": "staticwebassets\\js\\easyResponsiveTabs.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\js\\uisearch.js",
+      "PackagePath": "staticwebassets\\js\\uisearch.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\js\\wow.min.js",
+      "PackagePath": "staticwebassets\\js\\wow.min.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "D:\\myProjects\\Online_Recharge\\Online_Recharge\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.Online_Recharge.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.build.Online_Recharge.props",
+      "PackagePath": "build\\Online_Recharge.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildMultiTargeting.Online_Recharge.props",
+      "PackagePath": "buildMultiTargeting\\Online_Recharge.props"
+    },
+    {
+      "Id": "obj\\Debug\\net6.0\\staticwebassets\\msbuild.buildTransitive.Online_Recharge.props",
+      "PackagePath": "buildTransitive\\Online_Recharge.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

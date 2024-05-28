@@ -1,0 +1,649 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Easy Recharge a  Business Corporate Category Flat Bootstrap Responsive Website Template | Home :: w3layouts</title>
+
+    <link href="/css/bootstrap.css" rel="stylesheet">
+    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    <!-- for-mobile-apps -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Easy Recharge Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <!-- //for-mobile-apps -->
+    <!--fonts-->
+    <link href='//fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+    <!--//fonts-->
+    <!-- js -->
+
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.js"></script>
+    <script type="text/javascript" src="./js/easyResponsiveTabs.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <script src="./js/easyResponsiveTabs.js" type="text/javascript"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#horizontalTab').easyResponsiveTabs({
+                type: 'default', //Types: default, vertical, accordion
+                width: 'auto', //auto or any width like 600px
+                fit: true   // 100% fit in a container
+            });
+            console.log('Jquery called!!.');
+        });
+
+    </script>
+
+
+
+    <!-- js -->
+    <script>
+        $(document).ready(function () {
+            //Initialize tooltips
+            $('.nav-tabs > li a[title]').tooltip();
+
+            //Wizard
+            $('a[data-toggle="tab"]').on('show.bs.tab', function (e) {
+
+                var $target = $(e.target);
+
+                if ($target.parent().hasClass('disabled')) {
+                    return false;
+                }
+            });
+
+            $(".next-step").click(function (e) {
+
+                var $active = $('.wizard .nav-tabs li.active');
+                $active.next().removeClass('disabled');
+                nextTab($active);
+
+            });
+            $(".prev-step").click(function (e) {
+
+                var $active = $('.wizard .nav-tabs li.active');
+                prevTab($active);
+
+            });
+        });
+
+        function nextTab(elem) {
+            $(elem).next().find('a[data-toggle="tab"]').click();
+        }
+        function prevTab(elem) {
+            $(elem).prev().find('a[data-toggle="tab"]').click();
+        }
+    </script>
+
+</head>
+<body>
+    <header>
+        <div>
+
+            @* header------------------ *@
+
+            <div class="header">
+                <div class="logo">
+                    <h1><a href="/Home"><i><img src="/images/cell.png" alt=" " /></i>Recharge.PK</a></h1>
+                </div>
+                <div class="top-nav" style="width:fit-content">
+                    <span class="menu"><img src="/images/menu.png" alt=" " /></span>
+                    <ul class="nav1">
+                        <li><a href="#" data-toggle="modal" data-target="#myModal4">Login</a></li>
+                        <li><a href="/site">Sitemap</a></li>
+                        <li><a href="/About">About Us</a></li>
+                        <li><a href="/Contact">Contact Us</a></li>
+                        <li><a href="/CustCare">Customer Care</a></li>
+
+                        @* profile logic --------------------*@
+
+                        @if (SessionClass.status == "User")
+                        {
+                            <li><a href="#" id="profile" style="color:white"><b>@SessionClass.Name.ToUpper()</b></a></li>
+                            <li><a href="#" id="logout">Logout</a></li>
+                            <li><a href="/dataServices">Data Packages</a></li>
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#logout").click(function () {
+                                        var url = '@Url.Action("Logout", "Home")';
+                                        window.location.href = url;
+                                    });
+
+                                    $("#profile").click(function () {
+                                        var url = '@Url.Action("UserProfile", "Home")';
+                                        window.location.href = url;
+                                    });
+                                });
+                            </script>
+                        }
+                        else if (SessionClass.status == "admin")
+                        {
+                            <li><a href="#" id="profile" style="color:white"><b>Admin</b></a></li>
+                            <li><a href="#" id="logout">Logout</a></li>
+                            <li><a href="/dataServices">Data Packages</a></li>
+
+                            <script>
+                                $(document).ready(function () {
+                                    $("#logout").click(function () {
+                                        var url = '@Url.Action("Logout", "Home")';
+                                        window.location.href = url;
+                                    });
+
+                                    $("#profile").click(function () {
+                                        var url = '@Url.Action("AdminPanel", "Home")';
+                                        window.location.href = url;
+                                    });
+                                });
+                            </script>
+                        }
+                        else
+                        {
+                            <li><a href="#" data-toggle="modal" data-target="#myModal">Online Recharge</a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#myModal5">Signup</a></li>
+                            <li style="color:white"><b>GUEST</b></li>
+                        }
+                    </ul>
+
+                    <!-- script-for-menu -->
+                    <script>
+                        $("span.menu").click(function () {
+                            $("ul.nav1").slideToggle(300, function () {
+                                // Animation complete.
+                            });
+                        });
+                    </script>
+                    <!-- /script-for-menu -->
+                </div>
+
+                <!-- search-scripts -->
+                <script src="/js/classie.js"></script>
+                <script src="/js/uisearch.js"></script>
+                <script>
+                    new UISearch(document.getElementById('sb-search'));
+                </script>
+                <!-- //search-scripts -->
+
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </header>
+    @RenderBody()
+
+
+    <div class="footer">
+        <div class="container">
+            <h2><a href="index.html">Recharge.PK</a></h2>
+            <p>© 2024 Recharge.PK | All Rights Reserved </p>
+            <ul>
+                <li><a class="face1" href="#"></a></li>
+                <li><a class="face2" href="#"></a></li>
+                <li><a class="face3" href="#"></a></li>
+                <li><a class="face4" href="#"></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    @* Online Recharge Modal *@
+
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body">
+                    <section>
+                        <div class="wizard">
+                            <div class="wizard-inner">
+                                <ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active">
+                                        <a href="#step1" data-toggle="tab" aria-controls="step1" role="tab" title="Step 1">
+
+                                        </a>
+                                    </li>
+
+                                    <li role="presentation" class="disabled">
+                                        <a href="#step2" data-toggle="tab" aria-controls="step2" role="tab" title="Step 2">
+
+                                        </a>
+                                    </li>
+                                    <li role="presentation" class="disabled">
+                                        <a href="#step3" data-toggle="tab" aria-controls="step3" role="tab" title="Step 3">
+
+                                        </a>
+                                    </li>
+                                    <li role="presentation" class="disabled">
+                                        <a href="#step4" data-toggle="tab" aria-controls="step4" role="tab" title="Step 4">
+
+                                        </a>
+                                    </li>
+                                    <li role="presentation" class="disabled">
+                                        <a href="#step5" data-toggle="tab" aria-controls="step5" role="tab" title="Step 5">
+
+                                        </a>
+                                    </li>
+                                    <li role="presentation" class="disabled">
+                                        <a href="#complete" data-toggle="tab" aria-controls="complete" role="tab" title="Complete">
+
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <form role="form" method="post">
+                                <div class="tab-content">
+                                    <div class="tab-pane active" role="tabpanel" id="step1">
+                                        <div class="mobile-grids">
+                                            <div class="mobile-left text-center">
+                                                <img src="images/mobile.png" alt="" />
+                                            </div>
+                                            <div class="mobile-right">
+                                                <h4>Enter your mobile number</h4>
+                                                <p id="numeror" style="color:red"></p>
+                                                <label>+92</label>
+                                                <input id="mobile_num" type="text" class="mobile-text" maxlength="10" onkeypress="return isNumeric(event)" required="">
+                                            </div>
+
+                                        </div>
+                                        <ul class="list-inline pull-right">
+                                            <li><button type="button" id="numnext" class="mob-btn btn btn-primary next-step">Next</button></li>
+                                        </ul>
+                                    </div>
+
+                                    <div class="tab-pane" role="tabpanel" id="step2">
+                                        <div class="mobile-grids">
+                                            <div class="mobile-left text-center">
+                                                <img src="images/mobile.png" alt="" />
+                                            </div>
+                                            <div class="mobile-right ">
+                                                <h4>Which operator?</h4>
+                                                <ul class="rchge-icons">
+                                                    <li><a href="#">Ufone</a></li>
+                                                    <li><a href="#">Zong</a></li>
+                                                    <li><a href="#">Jazz</a></li>
+                                                    <li><a href="#">Telenor</a></li>
+                                                </ul>
+                                                <div class="section_room">
+
+                                                    <select id="operator" onchange="change_country(this.value)" class="frm-field required">
+                                                        <option value="">Telenor</option>
+                                                        <option value="null">Ufone</option>
+                                                        <option value="AX">Zong</option>
+                                                        <option value="AX">Jazz</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <ul class="list-inline pull-right">
+                                            <li><button type="button" class="mob-btn btn btn-default prev-step">Previous</button></li>
+                                            <li><button type="button" class="mob-btn btn btn-primary btn-info-full next-step">Next</button></li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="step3">
+                                        <div class="mobile-grids">
+                                            <div class="mobile-left text-center">
+                                                <img src="images/mobile.png" alt="" />
+                                            </div>
+                                            <div class="mobile-right ">
+                                                <h4>Which Circle?</h4>
+                                                <div class="map-image">
+                                                    <img src="images/map.png" alt="" />
+                                                </div>
+                                                <div class="section_room">
+                                                    <select id="city" onchange="change_country(this.value)" class="frm-field required">
+                                                        <option value="">Karachi</option>
+                                                        <option value="null">Islamabad</option>
+                                                        <option value="AX">Lahore</option>
+                                                        <option value="AX">Peshawar</option>
+                                                        <option value="AX">Hyderabad</option>
+                                                        <option value="AX">Faisalabad</option>
+                                                        <option value="AX">Quetta</option>
+                                                        <option value="AX">Gujranwala</option>
+                                                        <option value="AX">Multan</option>
+                                                        <option value="AX">Nawabshah</option>
+                                                        <option value="AX">Bahawalpur</option>
+                                                        <option value="AX">Sukkur</option>
+                                                        <option value="AX">Rawalpindi</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <ul class="list-inline pull-right">
+                                            <li><button type="button" class="mob-btn btn btn-default prev-step">Previous</button></li>
+                                            <li><button type="button" class="mob-btn btn btn-primary btn-info-full next-step">Next</button></li>
+                                        </ul>
+                                    </div>
+                                    <div class="tab-pane" role="tabpanel" id="step4">
+                                        <div class="mobile-grids">
+                                            <div class="mobile-left text-center">
+                                                <img src="images/mobile.png" alt="" />
+                                            </div>
+                                            <div class="mobile-right ">
+                                                <h4>How Much To Recharge?</h4>
+                                                <div class="mobile-rchge">
+                                                    <p id="priceeror" style="color:red"></p>
+                                                    <p id="numerror" style="color:red"></p>
+                                                    <input type="text" id="price" maxlength="4" required="">
+                                                </div>
+                                                <div class="clearfix"></div>
+                                            </div>
+                                        </div>
+                                        <ul class="list-inline pull-right">
+                                            <li><button type="button" class="mob-btn btn btn-default prev-step">Previous</button></li>
+                                            <li><input type="button" id="finish" class="mob-btn btn btn-primary btn-info-full" data-dismiss="modal" value="Finish"></li>
+
+                                            <div class="clearfix"></div>
+                                        </ul>
+                                    </div>
+
+                                    <script>
+                                        var inputField = document.querySelector('#mobile_num');
+                                        inputField.onkeydown = function (event) {
+                                            if (isNaN(event.key) && event.key !== 'Backspace') {
+                                                event.preventDefault();
+                                            }
+                                        };
+
+                                        var inputField = document.querySelector('#price');
+                                        inputField.onkeydown = function (event) {
+                                            if (isNaN(event.key) && event.key !== 'Backspace') {
+                                                event.preventDefault();
+                                            }
+                                        };
+                                        $(document).ready(function e() {
+                                            $("#finish").click(function e() {
+                                                var mobileNumber = $("#mobile_num").val();
+                                                var operator = $("#operator option:selected").text();
+                                                var city = $("#city option:selected").text();
+                                                var payment = $("#price").val();
+                                                if (payment == "") {
+                                                    $("#priceeror").text("payment is required");
+                                                    return false;
+                                                } else {
+                                                    $("#priceeror").text("");
+                                                } if (mobileNumber == "") {
+                                                    $("#numerror").text("mobile number is required");
+                                                    return false;
+                                                } else {
+                                                    $("#numerror").text("");
+                                                }
+
+
+                                                var mydata = { "mobileNumber": mobileNumber, "operator": operator, "city": city, "payment": payment };
+                                                $.ajax({
+                                                    url: '@Url.Action("easyload")',
+                                                    type: "POST",
+                                                    data: mydata,
+                                                    success: function (data) {
+                                                        if (data == "success") {
+                                                        var url = '@Url.Action("Payment", "Home")?price=' + payment;
+                                                        window.location.href = url;
+
+                                                        }else if(data == "fail"){
+                                                            alert("fail");
+                                                        }
+
+                                                    },
+                                                    error: function () {
+                                                        alert("fail");
+                                                    }
+
+
+                                                });
+                                            });
+                                        });
+
+                                    </script>
+
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //mobile -->
+ 
+    <!-- login -->
+    <div class="modal fade" id="myModal4" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content modal-info">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body modal-spa">
+                    <div class="login-grids">
+                        <div class="login">
+                            <div class="login-left">
+                                <ul>
+                                    <li><a class="fb" href="#"><i></i>Sign in with Facebook</a></li>
+                                    <li><a class="goog" href="#"><i></i>Sign in with Google</a></li>
+                                    <li><a class="linkin" href="#"><i></i>Sign in with Linkedin</a></li>
+                                </ul>
+                            </div>
+                            <div class="login-right">
+                                <form action="" method="post">
+                                    <h3>Signin with your account </h3>
+                                    <p id="ermail" style="color:red"></p>
+                                    <input type="text" placeholder="Enter your email or mobile number" name="email" id="signin_mail" required="">
+                                    <p id="erpass" style="color:red"></p>
+                                    <input type="text" placeholder="Enter your password" name="password" id="signin_pass" required="">
+                                    <h4><a href="#">Forgot password</a> / <a href="#">Create new password</a></h4>
+                                    <div class="single-bottom">
+                                        <input type="checkbox" id="brand" value="">
+                                        <label for="brand"><span></span>Remember Me.</label>
+                                    </div>
+                                    <input type="button" id="signin_btn" class="btn btn-primary" style="margin-top:14px" value="SIGNIN">
+
+                                    <script>
+
+                                        $(document).ready(function e() {
+                                            $("#signin_btn").click(function e() {
+                                                var signinmail = $("#signin_mail").val();
+                                                var signinpass = $("#signin_pass").val();
+
+
+                                                if (signinmail == "") {
+                                                    $("#ermail").text("please enter your email");
+                                                    return false;
+                                                } else {
+                                                    $("#ermail").text("");
+                                                }
+
+                                                if (signinpass == "") {
+                                                    $("#erpass").text("please enter your password");
+                                                    return false
+                                                } else {
+                                                    $("#erpass").text("");
+                                                }
+
+                                                var mydata = { "signin_mail": signinmail, "signin_pass": signinpass };
+                                                $.ajax({
+                                                    url: '@Url.Action("searchusr")',
+                                                    type: "post",
+                                                    data: mydata,
+                                                    success: function (data) {
+                                                        if (data == "success") {
+                                                            var url = '@Url.Action("UserProfile", "Home")';
+                                                            window.location.href = url;
+                                                        } else if (data == "admin") {
+                                                            var url = '@Url.Action("AdminPanel", "Home")';
+                                                            window.location.href = url;
+                                                        }
+                                                        else if (data == "fail") {
+                                                            $("#ermail").text("Email or password is invalid");
+                                                        };
+                                                    },
+
+                                                    error: function () {
+                                                        alert("fail");
+                                                    }
+
+                                                });
+
+                                            });
+                                        });
+
+                                    </script>
+
+
+                                </form>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <p>By logging in you agree to our <span>Terms and Conditions</span> and <span>Privacy Policy</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //login -->
+    <!-- signup -->
+    <div class="modal fade" id="myModal5" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content modal-info">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <div class="modal-body modal-spa">
+                    <div class="login-grids">
+                        <div class="login">
+                            <div class="login-left">
+                                <ul>
+                                    <li><a class="fb" href="#"><i></i>Sign in with Facebook</a></li>
+                                    <li><a class="goog" href="#"><i></i>Sign in with Google</a></li>
+                                    <li><a class="linkin" href="#"><i></i>Sign in with Linkedin</a></li>
+                                </ul>
+                            </div>
+                            <div class="login-right">
+                                <form action="#" method="post">
+
+                                    <h3 id="acntCreate" style="color:green">Create your Account : </h3>
+                                    <div class="styled-input agile-styled-input-top">
+                                        <p id="ErrorName" style="color:red "> </p>
+                                        <input type="text" placeholder="Enter your name" id="name" name="Name" required="">
+                                    </div>
+                                    <div class="styled-input">
+                                        <p id="Erroremail" style="color:red "> </p>
+                                        <input type="text" placeholder="Enter your email" id="email" name="Email" required="">
+                                    </div>
+                                    <div class="styled-input">
+                                        <p id="Errorpassword" style="color:red "> </p>
+                                        <input type="text" placeholder="Enter your password" name="password" id="password1" required="">
+                                    </div>
+                                    <div class="styled-input">
+                                        <p id="Errornum" style="color:red "> </p>
+                                        <input type="text" placeholder="Enter your mobile number" name="number" id="num" required="">
+                                    </div>
+
+
+                                    <input type="button" id="SignupBtn" name="SignupBtn" class="btn btn-primary" style="margin-top:14px" value="Create Account">
+
+                                    <script>
+                                        $(document).ready(function e() {
+                                            $("#SignupBtn").click(function e() {
+                                                var getname = $("#name").val();
+                                                var getemail = $("#email").val();
+                                                var getpass = $("#password1").val();
+                                                var number = $("#num").val();
+
+
+                                                if (getname == "") {
+                                                    $("#ErrorName").text("Please enter name");
+                                                    return false;
+                                                } else {
+                                                    $("#ErrorName").text();
+                                                }
+
+                                                if (getemail == "") {
+                                                    $("#Erroremail").text("Please enter email");
+                                                    return false;
+                                                } else {
+                                                    $("#Erroremail").text("");
+                                                }
+
+                                                if (getpass == "") {
+                                                    $("#Errorpassword").text("Please enter password");
+                                                    return false;
+                                                } else {
+                                                    $("#Errorpassword").text("");
+                                                }
+
+                                                if (number == "") {
+                                                    $("#Errornum").text("Please enter password");
+                                                    return false;
+                                                } else {
+                                                    $("#Errornum").text("");
+                                                }
+
+                                                // ajax-----------
+
+                                                var mydata = { "name": getname, "email": getemail, "pass": getpass, "num": number };
+                                                $.ajax({
+                                                    url: '@Url.Action("createusr")',
+                                                    type: "POST",
+                                                    data: mydata,
+                                                    success: function (data) {
+                                                        if (data == "already") {
+                                                            $("#Erroremail").text("Email Already Exist");
+                                                        } else {
+                                                            $("#Erroremail").text("");
+                                                        }
+                                                        if (data == "success") {
+                                                            $("#acntCreate").text("Account Create Successfully");
+                                                            $("#name").val("");
+                                                            $("#email").val("");
+                                                            $("#password1").val("");
+                                                            $("#num").val("");
+                                                            $(gender).val("")
+
+                                                        } else {
+                                                            $("#acntCreate").text("");
+                                                        }
+
+                                                    },
+
+                                                    error: function () {
+                                                        //error
+                                                        alert("fail");
+                                                    }
+
+
+                                                });
+
+                                            });
+                                        });
+
+                                    </script>
+
+                                </form>
+                            </div>
+                            <div class="clearfix"></div>
+                        </div>
+                        <p>By logging in you agree to our <span>Terms and Conditions</span> and <span>Privacy Policy</span></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script src="/lib/jquery/dist/jquery.min.js"></script>
+        <script src="/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/js/site.js" asp-append-version="true"></script>
+        @await RenderSectionAsync("Scripts", required: false)
+        <script src="/js/bootstrap.js"></script>
+</body>
+</html>

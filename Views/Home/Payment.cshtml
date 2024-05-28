@@ -1,0 +1,230 @@
+﻿@{
+    @using Online_Recharge.Controllers
+    @model Online_Recharge.Models.MultipleModelClass
+
+}
+
+<style>
+    .row {
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        -ms-flex-wrap: wrap; /* IE10 */
+        flex-wrap: wrap;
+        margin: 0 -16px;
+    }
+
+    #title {
+        font-size: 20px;
+    }
+
+    .col-25 {
+        -ms-flex: 25%; /* IE10 */
+        flex: 25%;
+    }
+
+    .col-50 {
+        -ms-flex: 50%; /* IE10 */
+        flex: 50%;
+    }
+
+    .col-75 {
+        -ms-flex: 75%; /* IE10 */
+        flex: 75%;
+    }
+
+    .col-25,
+    .col-50,
+    .col-75 {
+        padding: 0 16px;
+    }
+
+    #paymentsContainer {
+        margin-block: 40px;
+        width: 60vw;
+        background-color: #f2f2f2;
+        padding: 20px 20px 15px 20px;
+        border: 1px solid lightgrey;
+        border-radius: 3px;
+    }
+
+    input[type=text] {
+        width: 100%;
+        margin-bottom: 20px;
+        padding: 12px;
+        border: 1px solid #0000;
+        border-radius: 3px;
+    }
+
+    label {
+        margin-bottom: 10px;
+        display: block;
+        font-weight: 200;
+        color: #000;
+    }
+
+    .icon-container {
+        margin-bottom: 20px;
+        padding: 7px 0;
+        font-size: 24px;
+    }
+
+    .btn {
+        background-color: #04AA6D;
+        color: white;
+        padding: 12px;
+        margin: 10px 0;
+        border: none;
+        width: 100%;
+        border-radius: 3px;
+        cursor: pointer;
+        font-size: 17px;
+    }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+    span.price {
+        float: right;
+        color: grey;
+    }
+</style>
+
+<div class="row">
+    <div class="col-75">
+        <div class="container" id="paymentsContainer">
+            <form id="paymentForm" method="post">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="view_title" id="title">BILLING ADDRESS</h4>
+                        <p id="erormsg" style="color:red"></p>
+                        <label for="number"><i class="fa fa-user"></i> Number :</label>
+                        <input type="text" id="number" name="number" value="@easyloadData.number">
+
+                        <label for="price"><i class="fa fa-envelope"></i> Price :</label>
+                        <input type="text" id="price" name="price" value="@easyloadData.price">
+
+                        <label for="city"><i class="fa fa-address-card-o"></i> City</label>
+                        <input type="text" id="city" name="city" value="@easyloadData.city">
+
+                        <label for="operators"><i class="fa fa-address-card-o"></i> Operator</label>
+                        <input type="text" id="operators" name="operators" value="@easyloadData.operators">
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="view_title" id="title">PAYMENT</h4>
+
+                        <label for="cname">Name on Card</label>
+                        <input type="text" id="cname" name="cardname" placeholder="John More Doe">
+
+                        <label for="ccnum">Card number</label>
+                        <input type="text" id="ccnum" name="cardnumber" maxlength="16" placeholder="1111-2222-3333-4444">
+                    </div>
+                </div>
+                <label>
+                    <input type="checkbox" checked="checked" name="sameadr"> Shipping address same as billing
+                </label>
+                <input type="button" id="checkout" value="Continue to checkout" class="btn">
+            </form>
+        </div>
+    </div>
+    <div class="col-25">
+        <div class="container">
+            <h4>Cart</h4>
+            <p>@ViewBag.price Easy Load <span class="price">@ViewBag.price Rs</span></p>
+            <hr>
+            <p>Total <span class="price" style="color:black"><b>@ViewBag.price Rs</b></span></p>
+        </div>
+    </div>
+</div>
+
+@* payment for guest *@
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#checkout").click(function () {
+            var number = $("#number").val();
+            var price = $("#price").val();
+            var city = $("#city").val();
+            var operators = $("#operators").val();
+            var cname = $("#cname").val();
+            var ccnum = $("#ccnum").val();
+
+            if (number == "") {
+                $("#erormsg").text("Number is required");
+                return false;
+            } else {
+                $("#erormsg").text("");
+            }
+            if (price == "") {
+                $("#erormsg").text("Price is required");
+                return false;
+            } else {
+                $("#erormsg").text("");
+            }
+            if (city == "") {
+                $("#erormsg").text("City is required");
+                return false;
+            } else {
+                $("#erormsg").text("");
+            }
+            if (cname == "") {
+                $("#erormsg").text("Name on card is required");
+                return false;
+            } else {
+                $("#erormsg").text("");
+            }
+            if (ccnum == "") {
+                $("#erormsg").text("Card number is required");
+                return false;
+            } else {
+                $("#erormsg").text("");
+            }
+            if (operators == "") {
+                $("#erormsg").text("Operator is required");
+                return false;
+            } else {
+                $("#erormsg").text("");
+            }
+
+            var mydata = {
+                "number": number,
+                "price": price,
+                "city": city,
+                "operators": operators,
+                "cname": cname,
+                "ccnum": ccnum
+            };
+
+            $.ajax({
+                url: '@Url.Action("EasyLoadDone", "Home")',
+                type: "POST",
+                data: mydata,
+                success: function (data) {
+                    if (data == "success") {
+                        alert("Easy Load Done!");
+                        $("#number").val("");
+                        $("#price").val("");
+                        $("#city").val("");
+                        $("#operators").val("");
+                        $("#cname").val("");
+                        $("#ccnum").val("");
+                    } else {
+                        alert("Fail");
+                    }
+                },
+                error: function () {
+                    alert("Fail");
+                }
+            });
+        });
+    });
+
+    // Only allow numeric input for the card number field
+    var inputField = document.querySelector('#ccnum');
+    inputField.onkeydown = function (event) {
+        if (isNaN(event.key) && event.key !== 'Backspace') {
+            event.preventDefault();
+        }
+    };
+</script>

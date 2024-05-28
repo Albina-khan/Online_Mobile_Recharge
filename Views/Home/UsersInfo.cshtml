@@ -1,0 +1,286 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @using Online_Recharge.Controllers
+    @model Online_Recharge.Models.MultipleModelClass
+    @ViewData["Title"]
+}
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid #48cfc1;
+        border-collapse: collapse;
+    }
+    /* setting the text-align property to center*/
+    td {
+        padding: 5px;
+        text-align: center;
+    }
+
+    th {
+        padding: 5px;
+        text-align: center;
+    }
+
+</style>
+
+<div class="container">
+    <div class="container">
+        <div class="profile_details">
+            <ul>
+                <li class="dropdown profile_details_drop">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+                        <div class="profile_img">
+                            <span style="background:url(/images/1.png) no-repeat center"> </span>
+                            <div class="user-name">
+                                <p style="color:black">Your Profile </p>
+                            </div>
+                            <i class="lnr lnr-chevron-down"></i>
+                            <i class="lnr lnr-chevron-up"></i>
+                            <div class="clearfix"></div>
+                        </div>
+                    </a>
+                    <ul class="dropdown-menu drp-mnu">
+                        <li> <a href="#" data-toggle="modal" data-target="#myModal6"> Edit</a> </li>
+                        <li> <a href="/CustCare"> Help Center</a> </li>
+
+
+                    </ul>
+                </li>
+                <div class="clearfix"> </div>
+            </ul>
+        </div>
+
+ <h4 class="view_title" style="padding-top:100px">Users Accounts :</h4>
+
+
+    <p id="errormsg" style="color:red"></p>
+
+    <table class="table table-striped" id="tblCat">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Number</th>
+                <th scope="col">Email</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+        @{
+            var usr = ViewBag.usrs;
+            @foreach(var usrs in usr)
+            {
+            <tr>
+                    <td>
+                        <span>@usrs.id.ToString()</span>
+                    </td>
+                    <td>
+                        <span> @usrs.name.ToString() </span>
+                    </td>
+                    <td>
+                        <span> @usrs.number.ToString() </span>
+                    </td>
+                    <td>
+                        <span> @usrs.email.ToString() </span>
+                    </td>
+                    <td>
+                        <span> @usrs.status.ToString() </span>
+                    </td>
+
+                   
+                </tr>
+                
+            }
+        
+        }
+           
+
+
+            
+        </tbody>
+
+
+
+    </table>
+
+
+
+
+<h4 class="view_title" style="padding-top:100px">Users Feedbacks :</h4>
+
+
+<p id="errormsg" style="color:red"></p>
+
+<table class="table table-striped" id="tblCat">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">Massage</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var usrfeedback = ViewBag.feedback;
+
+            @foreach (var feedback in usrfeedback)
+            {
+                <tr>
+                    <td>
+                        <span>@feedback.id.ToString()</span>
+                    </td>
+                    <td>
+                        <span> @feedback.name.ToString() </span>
+                    </td>
+                    <td>
+                        <span> @feedback.email.ToString() </span>
+                    </td>
+                    <td>
+                        <span> @feedback.msg.ToString() </span>
+                    </td>
+
+
+                </tr>
+
+            }
+
+        }
+
+
+
+
+    </tbody>
+
+
+
+</table>
+
+
+
+
+<h4 class="view_title" style="padding-top:100px">Users Easy Load :</h4>
+
+
+<p id="errormsg" style="color:red"></p>
+
+<table class="table table-striped" id="tblCat">
+    <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Number</th>
+            <th scope="col">Price</th>
+            <th scope="col">Card Name</th>
+            <th scope="col">Card Number</th>
+            <th scope="col">Operator</th>
+        </tr>
+    </thead>
+    <tbody>
+        @{
+            var easyLoad = ViewBag.easyLoad;
+
+            @foreach (var easyLoads in easyLoad)
+            {
+                <tr>
+                    <td>
+                        <span> @easyLoads.Id.ToString() </span>
+                    </td>
+                    <td>
+                        <span> @easyLoads.number.ToString() </span>
+                    </td>
+                    <td>
+                        <span> @easyLoads.price.ToString() </span>
+                    </td>
+                    <td>
+                        <span> @easyLoads.cname.ToString() </span>
+                    </td><td>
+                        <span> @easyLoads.ccnum.ToString() </span>
+                    </td><td>
+                        <span> @easyLoads.operators.ToString() </span>
+                    </td>
+
+
+                </tr>
+
+            }
+
+        }
+
+
+
+
+    </tbody>
+
+</table>
+
+
+
+    <h4 class="view_title" style="padding-top:100px">Users Internet Packages :</h4>
+
+
+    <p id="errormsg" style="color:red"></p>
+
+    <table class="table table-striped" id="tblCat">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Number</th>
+                <th scope="col">Card Name</th>
+                <th scope="col">Card Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+
+                @if (Model.internetOrders != null)
+                {
+                    @foreach (var order in Model.internetOrders)
+                    {
+                        <tr>
+                            <td>
+                                <span> @order.id.ToString() </span>
+                            </td>
+                            <td>
+                                <span> @order.fname </span>
+                            </td>
+                            <td>
+                                <span>@order.cname </span>
+                            </td>
+                            <td>
+                                <span>@order.ccnum </span>
+                            </td>
+                            <td>
+                                <span>@order.mail </span>
+                            </td>
+                            <td>
+                                <span> @order.number </span>
+                            </td>
+                        </tr>
+                    }
+                }
+                else
+                {
+                    <tr>
+                        <td colspan="6">No orders found</td>
+                    </tr>
+                }
+
+
+            }
+
+
+
+
+        </tbody>
+
+
+
+</table>
+
+
+</div>

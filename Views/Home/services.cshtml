@@ -1,0 +1,89 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @using Online_Recharge.Controllers
+    @model Online_Recharge.Models.MultipleModelClass
+    @ViewData["Title"]
+}
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid #48cfc1;
+        border-collapse: collapse;
+    }
+    /* setting the text-align property to center*/
+    td {
+        padding: 5px;
+        text-align: center;
+    }th {
+        padding: 5px;
+        text-align: center;
+    }
+
+</style>
+@if (Model != null && Model.dataPackages != null)
+{
+    <h4 class="view_title" style="padding-top:100px">Internet Offers :</h4>
+
+
+	<p id="errormsg" style="color:red"></p>
+
+    <table class="table table-striped" id="tblCat">
+        <thead>
+            <tr >
+                <th scope="col">id</th>
+                <th scope="col">payment</th>
+                <th scope="col">validity</th>
+                <th scope="col">description</th>
+                <th scope="col">operators</th>
+                <th scope="col">type</th>
+                <th scope="col" colspan="2" style="width:150px">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+			@for (var i = 0; i < Model.dataPackages.Count(); i++)
+			{
+				<tr>
+					<td>
+						<span>@Model.dataPackages[i].id.ToString()</span>
+						<p id="id" style="display:none"> @Model.dataPackages[i].id.ToString() </p>
+					</td>
+					<td>
+						<span> @Model.dataPackages[i].payment.ToString() </span>
+						<input id="payment" type="text" value="@Model.dataPackages[i].payment.ToString()" style="display:none" />
+					</td><td>
+						<span> @Model.dataPackages[i].validity.ToString() </span>
+						<input id="validation" type="text" value="@Model.dataPackages[i].validity.ToString()" style="display:none" />
+					</td><td>
+						<span> @Model.dataPackages[i].desc.ToString() </span>
+						<input id="desc" type="text" value="@Model.dataPackages[i].desc.ToString()" style="display:none" />
+					</td>
+                    <td>
+						<span> @Model.dataPackages[i].operators.ToString() </span>
+						<input id="operators" type="text" value="@Model.dataPackages[i].operators.ToString()" style="display:none" />
+					</td> <td>
+						<span> @Model.dataPackages[i].type.ToString() </span>
+						<input id="operators" type="text" value="@Model.dataPackages[i].operators.ToString()" style="display:none" />
+					</td>
+                    <td id="edit" style="width:150px">
+                        <a id="edit" style="cursor:pointer" href="@Url.Action("editDatapackages", "Home")?myid=@Model.dataPackages[i].id.ToString()">edit</a>
+                        <span> / </span>
+                        <a id="delete" style="cursor:pointer" href="@Url.Action("deleteDatapackages", "Home")?myid=@Model.dataPackages[i].id.ToString()" > delete</a>
+                    </td>
+				</tr>
+
+              
+            }
+        </tbody>
+
+
+
+	</table>
+
+}
+else
+{
+    <p>No data available.</p>
+}

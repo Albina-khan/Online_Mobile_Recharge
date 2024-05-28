@@ -1,0 +1,208 @@
+﻿@page
+@model Online_Recharge.Models.MultipleModelClass
+
+@{
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Service</title>
+    <style>
+        nav {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+        }
+
+            nav a {
+                text-decoration: none;
+                color: #333;
+                padding: 10px 20px;
+                border-right: 1px solid #ccc;
+            }
+
+                nav a:last-child {
+                    border-right: none;
+                }
+
+        section {
+            padding: 20px;
+            margin-top:30px;
+            display: flex;
+        }
+
+        .feedback-form {
+            flex: 1;
+            margin-left: 20px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+            .feedback-form h2 {
+                margin-top: 0px;
+            }
+
+            .feedback-form label {
+                display: block;
+                margin-bottom: 5px;
+                color:black;
+            }
+
+            .feedback-form input[type="text"],
+            .feedback-form input[type="email"],
+            .feedback-form textarea {
+                width: 100%;
+                padding: 10px;
+                margin-bottom: 10px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+
+            .feedback-form button {
+                display: block;
+                width: 100%;
+                padding: 10px;
+                background-color: #007bff;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: background-color 0.3s;
+            }
+
+                .feedback-form button:hover {
+                    background-color: #0056b3;
+                }
+
+                .feedback-form button:active {
+                    background-color: #004080;
+                }
+                .heading{
+                    margin-bottom:30px;
+                }
+    </style>
+</head>
+<body>
+    <div class="banner page-head">
+        <div class="header">
+        </div>
+        <div class="clearfix"> </div>
+    </div>
+    <br>
+    <br>
+    <h4 class="view_title">Customer Service</h4>
+    <nav>
+        <a href="#">FAQ</a>
+        <a href="/Contact">Contact Us</a>
+        <a href="#">Terms and Conditions</a>
+    </nav>
+
+
+
+    <section>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8">
+            <div>
+            <h2 class="heading">Frequently Asked Questions</h2>
+            <ul>
+                <li><strong>How do I recharge my mobile?</strong><br> You can recharge your mobile by logging into your account and selecting the recharge option. Follow the prompts to complete the recharge.</li>
+                <br>
+                <li><strong>What payment methods do you accept?</strong><br> We accept credit/debit cards, net banking, and mobile wallets for recharge payments.</li>
+                <br>
+                <li><strong>How long does it take for the recharge to reflect?</strong><br> Recharges typically reflect within a few minutes. If you face any issues, please contact our support team.</li>
+                <br>
+                <li><strong>Can I recharge someone else's mobile?</strong><br> Yes, you can recharge someone else's mobile by entering their mobile number and selecting the recharge amount.</li>
+                <br>
+                <li><strong>Do you offer refunds for failed recharges?</strong><br> Yes, refunds are provided for failed recharges. The amount will be credited back to your account within 3-5 business days.</li>
+                <br>
+                <li><strong>How can I check my recharge history?</strong><br> You can view your recharge history by logging into your account and navigating to the "Recharge History" section.</li>
+                <br>
+                <li><strong>Is there a minimum recharge amount?</strong><br> Yes, the minimum recharge amount is $5.</li>
+                <br>
+                <li><strong>What should I do if I entered the wrong mobile number?</strong><br> If you entered the wrong mobile number, please contact our customer support immediately to rectify the issue.</li>
+            </ul>
+        </div>
+    
+            </div> 
+
+            @* feedback form *@
+
+            <div class="col-md-4">
+            <div class="feedback-form">
+            <h2>Feedback Form</h2>
+            <p id="errormsg" style="color:red"></p>
+            <form action="submit_feedback.php" method="post">
+                <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                </div>
+                <button type="button" class="btn btn-primary" id="feedback_btn">Submit</button>
+
+                            <script>
+
+                                $(document).ready(function e() {
+                                    $("#feedback_btn").click(function e() {
+                                        var name = $("#name").val();
+                                        var email = $("#email").val();
+                                        var message = $("#message").val();
+
+
+                                        if (name == "" || email == "" || message == "") {
+                                            $("#errormsg").text("Please enter required fields");
+                                            return false;
+                                        } else {
+                                            $("#errormsg").text("");
+                                        }
+
+                                        // ajax----------------
+                                        var mydata = { "name": name, "email": email, "message": message };
+                                        $.ajax({
+                                            url: '@Url.Action("feedbackform")',
+                                            type: "post",
+                                            data: mydata,
+                                            success: function (data) {
+                                                if (data == "success") {
+                                                    alert("Feedback Sent !");
+                                                    $("#name").val("")
+                                                    $("#email").val("")
+                                                    $("#message").val("")
+                                                }else{
+                                                    alert("failed");
+                                                }
+                                            },
+
+                                            error: function () {
+                                                alert("fail");
+                                            }
+
+                                        });
+
+                                    });
+                                });
+
+                            </script>
+
+            </form>
+        </div>
+
+            </div>
+        </div>
+    </div>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,474 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+	@using Online_Recharge.Controllers
+	@model Online_Recharge.Models.MultipleModelClass
+
+}
+
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<html>
+<body>
+
+	<div class="container">
+		<div class="profile_details">
+			<ul>
+				<li class="dropdown profile_details_drop">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+						<div class="profile_img">
+							<span style="background:url(/images/1.png) no-repeat center"> </span>
+							<div class="user-name">
+								<p style="color:black">Your Profile </p>
+							</div>
+							<i class="lnr lnr-chevron-down"></i>
+							<i class="lnr lnr-chevron-up"></i>
+							<div class="clearfix"></div>
+						</div>
+					</a>
+					<ul class="dropdown-menu drp-mnu">
+						<li> <a href="#" data-toggle="modal" data-target="#myModal6">Edit</a> </li>
+						<li> <a href="#" id="userLogin">Users Info</a> </li> 
+						<li> <a href="#" id="dataPackages">Data Packages</a> </li>
+
+						<script>
+							
+							$(document).ready(function () {
+								$("#dataPackages").click(function () {
+									var url = '@Url.Action("services", "Home")';
+									window.location.href = url;
+								});
+
+							});
+							$(document).ready(function () {
+								$("#userLogin").click(function () {
+									var url = '@Url.Action("UsersInfo", "Home")';
+									window.location.href = url;
+								});
+
+							});
+							
+						</script>
+
+					</ul>
+				</li>
+				<div class="clearfix"> </div>
+			</ul>
+		</div>
+		<div class="clearfix"> </div>
+	</div>
+	<div class="set-content">
+
+		<div class="container">
+			<h4 class="view_title">ADMIN PANEL :</h4>
+			<div class="bs-example bs-example-tabs orders-tab" role="tabpanel" data-example-id="togglable-tabs">
+				<ul id="myTab" class="nav nav-tabs" role="tablist">
+					<li role="presentation" class="active"><a href="#home" id="home-tab" role="tab" data-toggle="tab" aria-controls="home" aria-expanded="true">Personal info</a></li>
+					<li role="presentation"><a href="#return" role="tab" id="return-tab" data-toggle="tab" aria-controls="return">Change Password</a></li>
+				</ul>
+
+
+
+				<!-- edit -->
+				<div class="modal fade" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+					<div class="modal-dialog" role="document">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							</div>
+							<div class="modal-body">
+								<div class="edit-pro">
+									<form method="post">
+										<div class="edit-for-sett">
+											<h5>name</h5>
+											<p id="ername" style="color:red"></p>
+											<input type="text" id="name" value="@SessionClass.Name" required="">
+											<h5>Email address</h5>
+											<p id="ermail" style="color:red"></p>
+											<input type="text" id="mail" value="@SessionClass.Email" required="">
+											<h5>mobile no.</h5>
+											<p id="erno" style="color:red"></p>
+											<input type="text" id="no" value="@SessionClass.Number" required="">
+											<h5>Gender</h5>
+											<div class="swit-radio-thre">
+												<div class="check_box_thre"> <div class="radio_thre"> <label><input type="radio" name="radio" checked=""><i></i>MALE</label> </div></div>
+												<div class="check_box_thre"> <div class="radio_thre"> <label><input type="radio" name="radio"><i></i>FEMALE</label> </div></div>
+												<div class="clearfix"></div>
+											</div>
+											<input type="button" class="btn btn-primary" id="update" value="UPDATE">
+										</div>
+
+										<script>
+
+											$(document).ready(function e() {
+												$("#update").click(function e() {
+
+													var name = $("#name").val();
+													var mail = $("#mail").val();
+													var no = $("#no").val();
+													var gender = $('input[name="radio"]:checked').val();
+
+													if (mail == "") {
+														$("#ermail").text("please enter your email");
+														return false;
+													} else {
+														$("#ermail").text("");
+													}
+
+													if (name == "") {
+														$("#ername").text("please enter your password");
+														return false
+													} else {
+														$("#ername").text("");
+													}
+
+													if (no == "") {
+														$("#erno").text("please enter your password");
+														return false
+													} else {
+														$("#erno").text("");
+													}
+
+
+													//ajax-----------
+
+													var mydata = { "name": name, "mail": mail, "no": no, "gender": gender };
+
+													$.ajax({
+
+														url: '@Url.Action("Updateusr")',
+														type: "post",
+														data: mydata,
+														success: function (data) {
+
+															if (data == "success") {
+																alert("updated");
+																var url = '@Url.Action("UserProfile", "Home")';
+																window.location.href = url;
+
+
+															} else if (data == "fail") {
+																alert("failed");
+															}
+														},
+														error: function () {
+															alert("fail");
+														}
+
+
+													});
+												});
+											});
+
+										</script>
+
+
+
+
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- edit -->
+
+
+
+				<div id="myTabContent" class="tab-content">
+					<div role="tabpanel" class="tabs-para tab-pane fade in active" id="home" aria-labelledby="home-tab">
+						<div class="profile-gd">
+							<ul class="pro-left">
+								<li>Name</li>
+								<li>Email</li>
+								<li>Mobile number</li>
+							</ul>
+							<ul class="pro-right">
+
+								<li>: @SessionClass.Name <a href="#" data-toggle="modal" data-target="#myModal6"> Edit</a></li>
+								<li>: @SessionClass.Email</li>
+								<li>: @SessionClass.Number</li>
+
+							</ul>
+							<div class="clearfix"></div>
+						</div>
+					</div>
+					<div role="tabpanel" class="tabs-para tab-pane fade" id="return" aria-labelledby="return-tab">
+						<div class="profile-gd">
+							<form>
+								<div class="tab-for-sett">
+									<h5>old password</h5>
+									<p id="errold" style="color:red"></p>
+									<input id="old_pass" type="password" required=""> <i onclick="togglefunc()" id="toggle" class="glyphicon glyphicon-eye-open" style="color:grey"></i>
+									<h5>new password</h5>
+									<p id="errnew" style="color:red"></p>
+									<input id="new_pass" type="password" required="">
+									<h5>confirm password</h5>
+									<p id="errcnf" style="color:red"></p>
+									<input id="cnf_pass" type="password" required="">
+								</div>
+
+								<div class="clearfix"></div>
+								<input id="pass_Submit_btn" type="button" value="SAVE">
+
+								<script>
+
+									function togglefunc() {
+										var x = document.getElementById("old_pass");
+										if (x.type === "password") {
+											x.type = "text";
+										} else {
+											x.type = "password";
+										}
+									}
+
+									$(document).ready(function e() {
+										$("#pass_Submit_btn").click(function e() {
+											var oldpass = $("#old_pass").val();
+											var newpass = $("#new_pass").val();
+											var cnfpass = $("#cnf_pass").val();
+
+											if (oldpass == "") {
+												$("#errold").text("enter your old password");
+												return false;
+											} else {
+												$("#errold").text("");
+											}
+											if (newpass == "") {
+												$("#errnew").text("enter your old password");
+												return false;
+											} else {
+												$("#errnew").text("");
+											}
+											if (cnfpass == "") {
+												$("#errcnf").text("enter your old password");
+												return false;
+											} else {
+												$("#errcnf").text("");
+											} if (cnfpass != newpass) {
+												$("#errnew").text("invalid new password or confirm password");
+												return false;
+											} else {
+												$("#errnew").text("");
+											}
+
+											//ajax---------
+
+											var mydata = { "oldpass": oldpass, "newpass": newpass };
+
+											$.ajax({
+
+												url: '@Url.Action("updatepass")',
+												type: "post",
+												data: mydata,
+												success: function (data) {
+
+													if (data == "success") {
+														alert("updated");
+													} else if (data == "fail") {
+														alert("failed");
+													}
+												},
+												error: function () {
+													alert("fail");
+												}
+
+
+											});
+
+
+										});
+									});
+
+								</script>
+
+
+							</form>
+						</div>
+					</div>
+
+
+
+					<h4 class="view_title" style="margin-block:80px">Add A Data Package :</h4>
+
+					<form role="form" method="post">
+						<div >
+							<div class="tab-pane active" >
+								<div class="mobile-grids">
+									<div class="mobile-right ">
+										<h4>Payment for Package</h4>
+										<p style="color:red" id="priceeror"></p>
+										<input type="text" class="mobile-text" id="payment" required="">
+
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" role="tabpanel" >
+								<div class="mobile-grids">
+									<div class="mobile-left text-center">
+										<img src="images/usb.png" alt="" />
+									</div>
+									<div class="mobile-right ">
+										<h4>Which operator?</h4>
+										<p style="color:red" id="operor"></p>
+										<ul class="rchge-icons">
+											<li><a href="#">Zong</a></li>
+											<li><a href="#">Telenor</a></li>
+											<li><a href="#">Jazz</a></li>
+											<li><a href="#">Ufone</a></li>
+										</ul>
+										<div class="section_room">
+
+											<select id="operator" onchange="change_country(this.value)" class="frm-field required">
+												<option value="">Telenor</option>
+												<option value="null">Ufone</option>
+												<option value="AX">Zong</option>
+												<option value="AX">Jazz</option>
+											</select>
+										</div>
+									</div>
+
+								</div>
+							</div>
+							<div class="tab-pane" role="tabpanel">
+								<div class="mobile-grids">
+									<div class="mobile-left text-center">
+										<img src="images/usb.png" alt="" />
+									</div>
+									<div class="mobile-right ">
+										<h4>Package Type?</h4>
+										<p style="color:red" id="pceror"></p>
+										<div class="section_room">
+											<select id="package" onchange="change_country(this.value)" class="frm-field required">
+												<option value="">Top up</option>
+												<option value="null">Special recharge</option>
+												<option value="AX">Internet package</option>
+											</select>
+										</div>
+									</div>
+
+								</div>
+							</div>
+
+							<div class="tab-pane" role="tabpanel" >
+								<div class="mobile-grids">
+									<div class="mobile-left text-center">
+										<img src="images/usb.png" alt="" />
+									</div>
+									<div class="mobile-right ">
+										<h4>Validity : </h4>
+										<p style="color:red" id="valeror"></p>
+
+										<div class="dth-rchge">
+											<input type="text" id="validity"  required="">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tab-pane" role="tabpanel" >
+								<div class="mobile-grids">
+									<div class="mobile-left text-center">
+										<img src="images/usb.png" alt="" />
+									</div>
+									<div class="mobile-right ">
+										<h4>Description Of Package : </h4>
+										<p style="color:red" id="desceror"></p>
+
+										<div class="dth-rchge">
+											<input type="text" id="desc" required="">
+										</div>
+									</div>
+								</div>
+							</div>
+								<ul class="list-inline pull-right">
+									<li><button type="button" class="mob-btn btn btn-primary btn-info-full" id="add" >ADD Package</button></li>
+								</ul>
+
+
+							<script>
+								var inputField = document.querySelector('#payment');
+								inputField.onkeydown = function (event) {
+									if (isNaN(event.key) && event.key !== 'Backspace') {
+										event.preventDefault();
+									}
+								}; var inputField = document.querySelector('#validity');
+								inputField.onkeydown = function (event) {
+									if (isNaN(event.key) && event.key !== 'Backspace') {
+										event.preventDefault();
+									}
+								};
+								$(document).ready(function e() {
+									$("#add").click(function e() {
+										var payment = $("#payment").val();
+										var operator = $("#operator option:selected").text();
+										var validity = $("#validity").val();
+										var desc = $("#desc").val();
+										var type = $("#package option:selected").text();
+										if (payment == "") {
+											$("#priceeror").text("payment is required");
+											return false;
+										} else {
+											$("#priceeror").text("");
+										} 
+										 if (validity == "") {
+											$("#valeror").text("validity is required");
+											return false;
+										} else {
+											$("#valeror").text("");
+										} if (desc == "") {
+											$("#desceror").text("description is required");
+											return false;
+										} else {
+											$("#desceror").text("");
+										}
+										var mydata = { "payment": payment, "operator": operator, "validity": validity, "desc": desc , "type": type};
+										$.ajax({
+											url: '@Url.Action("servicesProvide")',
+											type: "POST",
+											data: mydata,
+											success: function (data) {
+
+												if (data == "success") {
+													alert("Service Added!");
+													$("#payment").val("");
+													$("#operator option:selected").text("");
+													$("#validity").val("");
+													$("#desc").val("");
+
+												} else  {
+													alert("failed");
+												}
+											},
+											error: function () {
+												alert("fail");
+											}
+
+
+										});
+									});
+								});
+
+							</script>
+
+
+						</div>
+					</form>
+
+
+
+
+
+
+				</div>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>

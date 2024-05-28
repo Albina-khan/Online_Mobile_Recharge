@@ -1,0 +1,181 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    @using Online_Recharge.Controllers
+}
+
+<h4 class="view_title" style="margin-top:30px">Edit Form :</h4>
+
+<form role="form" method="post">
+	<div class="container" style="background-color:dimgrey ; padding-bottom:50px ; margin-bottom:50px ; width:50vw" >
+	<div>
+		<div class="col-md-6">
+		<div class="tab-pane active">
+			<div class="mobile-grids">
+				<div class="mobile-right ">
+					<h4>Payment for Package</h4>
+					<p style="color:red" id="priceeror"></p>
+					<input type="text" class="mobile-text" id="payment" style="font-size:20px" value="@editClass.payment" required="">
+
+				</div>
+			</div>
+		</div>
+
+		</div>
+		<div class="col-md-6">
+		<div class="tab-pane" role="tabpanel">
+			<div class="mobile-grids">
+				<div class="mobile-left text-center">
+					<img src="images/usb.png" alt="" />
+				</div>
+				<div class="mobile-right ">
+					<h4>Which operator?</h4>
+					<p style="color:red" id="operor"></p>
+					<div class="section_room">
+
+								<select id="operator" onchange="change_country(this.value)" style="font-size:20px" class="frm-field required">
+							<option value="">Telenor</option>
+							<option value="null">Ufone</option>
+							<option value="AX">Zong</option>
+							<option value="AX">Jazz</option>
+						</select>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		</div>
+		<div class="col-md-6">
+		<div class="tab-pane" role="tabpanel">
+			<div class="mobile-grids">
+				<div class="mobile-left text-center">
+					<img src="images/usb.png" alt="" />
+				</div>
+				<div class="mobile-right ">
+					<h4>Validity : </h4>
+					<p style="color:red" id="valeror"></p>
+
+					<div class="dth-rchge">
+								<input type="text" id="validity" style="font-size:20px" value="@editClass.validity" required="">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		</div>
+		<div class="col-md-6">
+		<div class="tab-pane" role="tabpanel">
+			<div class="mobile-grids">
+				<div class="mobile-left text-center">
+					<img src="images/usb.png" alt="" />
+				</div>
+				<div class="mobile-right ">
+					<h4>Package Type?</h4>
+					<p style="color:red" id="pceror"></p>
+					<div class="section_room">
+								<select id="package" onchange="change_country(this.value)" style="font-size:20px" class="frm-field required">
+							<option value="">Top up</option>
+							<option value="null">Special recharge</option>
+							<option value="AX">Internet package</option>
+						</select>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		</div>
+		<div class="col-md-12">
+		<div class="tab-pane" role="tabpanel">
+			<div class="mobile-grids">
+				<div class="mobile-left text-center">
+					<img src="images/usb.png" alt="" />
+				</div>
+				<div class="mobile-right ">
+					<h4>Description Of Package : </h4>
+					<p style="color:red" id="desceror"></p>
+
+					<div class="dth-rchge">
+								<input type="text" id="desc" style="font-size:20px" value="@editClass.desc" required="">
+					</div>
+				</div>
+			</div>
+		</div>
+
+		</div>
+		<ul class="list-inline pull-right">
+			<li><button type="button" class="mob-btn btn btn-primary btn-info-full" id="add">Update Package</button></li>
+		</ul>
+
+
+		<script>
+			var inputField = document.querySelector('#payment');
+			inputField.onkeydown = function (event) {
+				if (isNaN(event.key) && event.key !== 'Backspace') {
+					event.preventDefault();
+				}
+			}; var inputField = document.querySelector('#validity');
+			inputField.onkeydown = function (event) {
+				if (isNaN(event.key) && event.key !== 'Backspace') {
+					event.preventDefault();
+				}
+			};
+			$(document).ready(function e() {
+				$("#add").click(function e() {
+					var payment = $("#payment").val();
+					var operator = $("#operator option:selected").text();
+					var package = $("#package option:selected").text();
+					var validity = $("#validity").val();
+					var desc = $("#desc").val();
+					if (payment == "") {
+						$("#priceeror").text("payment is required");
+						return false;
+					} else {
+						$("#priceeror").text("");
+					} if (validity == "") {
+						$("#valeror").text("mobile number is required");
+						return false;
+					} else {
+						$("#valeror").text("");
+					} if (desc == "") {
+						$("#desceror").text("mobile number is required");
+						return false;
+					} else {
+						$("#desceror").text("");
+					}
+					var mydata = { "payment": payment, "operator": operator, "validity": validity, "desc": desc, "package": package };
+					$.ajax({
+						url: '@Url.Action("updatePackage")',
+						type: "POST",
+						data: mydata,
+						success: function (data) {
+
+							if (data == "success") {
+								alert("Service Added!");
+								$("#payment").val("");
+								$("#operator option:selected").text("");
+								$("#validity").val("");
+								$("#desc").val("");
+
+							} else {
+								alert("failed");
+							}
+						},
+						error: function () {
+							alert("fail");
+						}
+
+
+					});
+				});
+			});
+
+		</script>
+
+
+	</div>
+
+	</div>
+</form>
